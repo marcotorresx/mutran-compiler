@@ -1,0 +1,6 @@
+#TITLE Prueba Error de Sintaxis
+#VOICES bass
+bass C4q D4q E4q F4q G4q A4q B4q
+#Error en siguiente linea, sintaxis invalida por comienzo con nota
+C4q D4q E4q bass F4q G4q A4q B4q
+#BAR

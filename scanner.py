@@ -3,8 +3,8 @@ import re
 # Escanear las líneas del texto y generar tokens
 def scanner(lines, tokenCode):
 
-    tokens = []
-    notes = []
+    tokens = [] # Lista de tokens
+    notes = [] # Lista de notas
 
     for line in lines:
 
@@ -29,7 +29,7 @@ def scanner(lines, tokenCode):
             isNote = bool(re.search(notePattern, item)) # Buscar patrón en linea
 
             # Checar si es un instrumento
-            instrumentPattern = re.compile(r"^([a-z]+)$") # Una o más letras minúscula y mayúscula
+            instrumentPattern = re.compile(r"^[a-z]+$") # Una o más letras minúscula y mayúscula
             isInstrument = bool(re.search(instrumentPattern, item)) # Buscar patrón en linea
 
             # Checar si es una barra vertical
@@ -54,7 +54,9 @@ def scanner(lines, tokenCode):
 
             # Si es otro
             else:
+                print("")
                 print(f'ERROR: Lexema no valido "{item}"') # Imprimir expresion no valida
+                print("")
                 quit() # Salir del programa
 
         # Cuando recorre todos los elementos de la línea de datos agrega token newline

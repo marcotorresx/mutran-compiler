@@ -1,0 +1,9 @@
+#TITLE Prueba de Archivo en Formato Mut
+#VOICES bass drum
+#Prueba de notas
+bass C4q D4q E4q F4q G4q A4q B4q
+#Prueba de tiempos
+drum C4h D4q | E4e F4s
+#Prueba de otras notas
+bass C##4q G#3h. Gb4e7 |
+#BAR

@@ -1,0 +1,5 @@
+#TITLE Prueba Error de Lexico
+#VOICES bass
+#Error en siguiente linea, nota invalida
+bass C4q D4q E4q F4q9. G4q A4q B4q
+#BAR

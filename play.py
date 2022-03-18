@@ -82,7 +82,9 @@ def play(notes):
             notenameNum = notenameNums.get(notename, None) # Buscar la numero de nota
             # Si la nota no existe en el piano (E#, Fb, B#, Cb)
             if notenameNum == None:
-                print(f'ERROR: Notename no existe en piano {notename}')
+                print("")
+                print(f'ERROR: Notename "{notename}" no existe en piano')
+                print("")
                 quit()
             frecuency = getFrecuency(notenameNum, int(octave))
 

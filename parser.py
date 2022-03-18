@@ -19,7 +19,9 @@ def parser(tokens, tokenCode):
                 main()
             # Si es otro token hay un error de sintaxis
             else:
+                print("")
                 print("ERROR: Sintaxis no valida")
+                print("")
                 quit()
         
         # La falta de tokens representa épsilon
@@ -43,7 +45,9 @@ def parser(tokens, tokenCode):
             print("- Data Line")
         # Si es otro token hay un error de sintaxis
         else:
+            print("")
             print("ERROR: Sintaxis no valida")
+            print("")
             quit()
 
 
