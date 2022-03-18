@@ -1,0 +1,6 @@
+#TITLE J.S. Bach Well Tempered Clavier, I, Prelude no. 11
+#VOICES left right
+# first measure
+right C4q D4q E4q F4q G4q
+left A4q B4q 
+#BAR
