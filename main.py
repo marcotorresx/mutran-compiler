@@ -7,7 +7,7 @@ A01025334
 
 # Importaciones
 from scanner import scanner
-from parser import parser
+from parser import Parser
 from play import play 
 
 # Estructura para relacionar lexemas con tokens
@@ -36,7 +36,8 @@ def main():
     print("")
     print("--- PARSER ---")
     print("Sintaxis reconocida:")
-    parser(tokens, tokenCode)
+    parser = Parser(tokens, tokenCode)
+    parser.main()
 
     # Tocar las notas musicales
     print("")

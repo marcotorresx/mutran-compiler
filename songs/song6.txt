@@ -1,4 +1,6 @@
 #TITLE Prueba de Archivo en Formato Mut
-#VOICES bass drum
-#Prueba de notas
-bass C4q D4q
+#VOICES aknakj
+bass C4q C4q | C4q C4q | C4q
+bass C4q C4q | C4q C4q | C4q |
+C4q
+#askkdnal

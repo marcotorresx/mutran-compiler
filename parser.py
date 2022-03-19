@@ -1,56 +1,73 @@
-# Ejecutar parser para verificar sintaxis
-def parser(tokens, tokenCode):
+# Clase parser con los métodos y datos necesarios para hacer un análisis de sintaxis
+class Parser:
+
+    # Constructor
+    def __init__(self, tokens, tokenCode):
+        self.tokens = tokens
+        self.tokenCode = tokenCode
+        self.token = None
+
 
     # Módulo main
-    def main():
+    def main(self):
 
-        # Si hay tokens pendientes
-        if len(tokens) > 0:
-
-            token = tokens.pop(0) # Obtener siguiente token
-
-            # Puede ser línea de control
-            if token == tokenCode["controlLine"]:
-                print("- Control Line")
-                main()
-            # Puede ser línea de datos y empezar con instrumento
-            elif token == tokenCode["instrument"]:
-                notes()
-                main()
-            # Si es otro token hay un error de sintaxis
-            else:
-                print("")
-                print("ERROR: Sintaxis no valida")
-                print("")
-                quit()
-        
-        # La falta de tokens representa épsilon
-        else:
+        # Si ya no hay más entradas se considera épsilon y termina el programa
+        if len(self.tokens) <= 0:
             print("Parser ejecutado con exito...")
 
+        else:
+            self.token = self.tokens.pop(0) # Obtener token actual
+            self.line() # Ejecutar módulo line
+            self.main() # Ejecutar módulo main
 
-    # Módulo notes
-    def notes():
+
+    # Módulo line
+    def line(self):
+
+        # Puede ser controlLine
+        if self.token == self.tokenCode["controlLine"]:
+            print("- Control Line")
+
+        # Si no es checar si es dataLine
+        else:
+            self.dataLine()
+
+
+    # Módulo dataLine
+    def dataLine(self):
+
+        # Puede ser dataLine y empezar con instrument
+        if self.token == self.tokenCode["instrument"]:
+            self.notes() # Ejecutar módulo notes
         
-        token = tokens.pop(0) # Obtener siguiente token
-
-        # Puede ser nota
-        if token == tokenCode["note"]:
-            notes()
-        # Puede ser barra
-        elif token == tokenCode["bar"]:
-            notes()
-        # Puede ser newline y aquí se acepta notes
-        elif token == tokenCode["newline"]:
-            print("- Data Line")
-        # Si es otro token hay un error de sintaxis
+        # Si no es instrument y tampoco controlLine marcar error
         else:
             print("")
-            print("ERROR: Sintaxis no valida")
+            print("ERROR: Sintaxis no valida, se esperaba controlLine o instrument")
             print("")
             quit()
 
 
-    # Ejecutar módulo main
-    main()
-        
+    # Módulo notes
+    def notes(self):
+
+        self.token = self.tokens.pop(0) # Obtener token actual
+
+        # Puede ser note
+        if self.token == self.tokenCode["note"]:
+            self.notes()
+
+        # Puede ser bar
+        elif self.token == self.tokenCode["bar"]:
+            self.notes()
+
+        # Puede ser newline
+        elif self.token == self.tokenCode["newline"]:
+            print("- Data Line")
+            
+        # Si es otro token hay un error de sintaxis
+        else:
+            print("")
+            print("ERROR: Sintaxis no valida, se esperaba note, bar o newline")
+            print("")
+            quit()
