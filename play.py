@@ -47,17 +47,16 @@ def play(notes):
         pitchRes = re.search(pitchPattern, note) # Buscar patrón en nota
         pitch = note[pitchRes.start():pitchRes.end()]
 
-        # Buscar identificadores de pitch
-        rest = None
-        notename = None
-        octave = None
-
-        # Obtener rest
+        # Buscar rest
         restPattern = re.compile(r"^R") # Comienza con R
         restRes = re.search(restPattern, pitch) # Buscar patrón en pitch
 
-        # Si no se encontró rest, obtener notename y octave
-        if not restRes:
+        # Si se encontró rest
+        if restRes:
+            frecuency = 0 # La frecuencia es 0
+
+        # Si no se encontró rest obtener notename y octave
+        else:
 
             # Obtener notename
             notenamePattern = re.compile(r"^(A|B|C|D|E|F|G)(#|b)?") # Para generar sonido se ignoran #/b extras
@@ -69,28 +68,28 @@ def play(notes):
             octaveRes = re.search(octavePattern, pitch) # Buscar patrón en pitch
             octave = note[octaveRes.start():octaveRes.end()]
 
-        # Obtener tval
-        tvalPattern = re.compile(r"(w|h|q|e|s|t|f)")
-        tvalRes = re.search(tvalPattern, note) # Buscar patrón en nota
-        tval = note[tvalRes.start():tvalRes.end()]
+            # Buscar número de nota para calcular frecuencia
+            notenameNum = notenameNums.get(notename, None)
 
-        # Caluclar la frecuencia de la nota
-        if restRes:
-            frecuency = 0
-    
-        else:
-            notenameNum = notenameNums.get(notename, None) # Buscar la numero de nota
-            # Si la nota no existe en el piano (E#, Fb, B#, Cb)
+            # Si la nota no existe en el piano (E#, Fb, B#, Cb) marcar error
             if notenameNum == None:
                 print("")
                 print(f'ERROR: Notename "{notename}" no existe en piano')
                 print("")
                 quit()
+
+            # Obtener la frecuencia
             frecuency = getFrecuency(notenameNum, int(octave))
 
+        # Obtener tval
+        tvalPattern = re.compile(r"(w|h|q|e|s|t|f)")
+        tvalRes = re.search(tvalPattern, note) # Buscar patrón en nota
+        tval = note[tvalRes.start():tvalRes.end()]
+            
         # Obtener duración de tval
         duration = tvalDurations[tval]
 
+        # Reproducir sonido de nota
         playSound(frecuency, duration)
 
 
