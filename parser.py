@@ -40,7 +40,7 @@ class Parser:
         if self.token == self.tokenCode["instrument"]:
             self.notes() # Ejecutar módulo notes
         
-        # Si no es instrument y tampoco controlLine marcar error
+        # Si no fue controlLine y tampoco instrument marcar error
         else:
             print("")
             print("ERROR: Sintaxis no valida, se esperaba controlLine o instrument")
@@ -61,7 +61,7 @@ class Parser:
         elif self.token == self.tokenCode["bar"]:
             self.notes()
 
-        # Puede ser newline
+        # Puede ser newline y se acepta dataLine
         elif self.token == self.tokenCode["newline"]:
             print("- Data Line")
             

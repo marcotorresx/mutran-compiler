@@ -1,5 +1,7 @@
 #TITLE Prueba Error de Sintaxis
 #VOICES bass
-#Error en siguiente linea, sintaxis invalida por instrumento enmedio
+
+#Error en siguiente linea, sintaxis invalida por instrumento en medio
 bass C4q D4q E4q bass F4q G4q A4q B4q
+
 #BAR

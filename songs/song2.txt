@@ -1,5 +1,7 @@
 #TITLE Prueba Error de Lexico
 #VOICES bass4
-#Error en siguiente linea, instsrumento invalido
+
+#Error en siguiente linea, instrumento invalido
 bass4 C4q D4q E4q F4q G4q A4q B4q
+
 #BAR

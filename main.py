@@ -23,7 +23,7 @@ tokenCode = {
 def main():
 
     # Abrir archivo txt con canción en formato mutran, hay varios archivos diponibles
-    songFile = open('./songs/song6.txt', 'r')
+    songFile = open('./songs/song1.txt', 'r')
     lines = songFile.readlines()
 
     # Ejecutar scanner y recibir lista de tokens
@@ -44,7 +44,7 @@ def main():
     print("--- CANCION ---")
     print("Tocando cancion...")
     print("")
-    # play(notes)
+    play(notes)
     
 
 main()

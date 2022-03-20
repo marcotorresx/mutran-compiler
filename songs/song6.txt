@@ -1,6 +1,10 @@
-#TITLE Prueba de Archivo en Formato Mut
-#VOICES aknakj
-bass C4q C4q | C4q C4q | C4q
-bass C4q C4q | C4q C4q | C4q |
-C4q
-#askkdnal
+#TITLE Prueba Correcta de Archivo en Formato Mut
+#VOICES bass
+
+#Canción Martinillo
+bass G4q A4q B4q G4q
+bass A4q B4q C#5h
+bass D5e E5e D5e C5e B4q G4q
+bass A4q D4q G4h
+
+#BAR
