@@ -8,6 +8,6 @@ bass C4q D4q E4q F4q G4q | A4q B4q
 drum C4h C4q C4e
 
 #Prueba de otras notas
-bass C##4q G#3h. Gb4e7 |
+bass C##4q Rq G#3h. Gb4e7 |
 
 #BAR
