@@ -2,7 +2,7 @@
 #VOICES bass drum
 
 #Prueba de notas
-bass C4q D4q E4q F4q G4q | A4q B4q
+bass C4q D4q E4q | F4q
 
 #Prueba duración de notas
 drum C4h C4q C4e
